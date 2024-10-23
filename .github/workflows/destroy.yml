@@ -1,0 +1,39 @@
+name: 'Terraform'
+
+on: 
+   workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    environment: production
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Azure Login
+      run: az login --service-principal -u ${{ secrets.ARM_CLIENT_ID }} -p ${{ secrets.ARM_CLIENT_SECRET }} --tenant ${{ secrets.ARM_TENANT_ID }}
+
+    - name: Set Subscription
+      run:  az account set --subscription ${{ secrets.ARM_SUBSCRIPTION_ID }}  
+      
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        cli_config_credentials_token: ${{ secrets.HCL_TOKEN }}
+
+    - name: Terraform Init
+      run: terraform init -reconfigure
+
+    - name: Destroy
+      run:  terraform destroy -auto-approve
