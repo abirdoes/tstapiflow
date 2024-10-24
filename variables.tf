@@ -92,3 +92,8 @@ variable "deploy_sap_landing_zones" {
   type    = bool
   default = false
 }
+
+variable "apps_prefix" {
+  type = string
+  default = "Apps"
+}

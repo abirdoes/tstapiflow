@@ -1,7 +1,7 @@
 locals {
   custom_landing_zones = {
-    "Prod" = {
-      display_name               = "Prod"
+    "${var.apps_prefix}-Prod" = {
+      display_name               = "${var.apps_prefix}-Prod"
       parent_management_group_id = "Apps"
       subscription_ids           = []
       archetype_config = {
@@ -10,8 +10,8 @@ locals {
         access_control = {}
       }
     }
-    "Dev" = {
-      display_name               = "Dev"
+    "${var.apps_prefix}-Dev" = {
+      display_name               = "${var.apps_prefix}-Dev"
       parent_management_group_id = "Apps"
       subscription_ids           = []
       archetype_config = {
@@ -32,8 +32,8 @@ locals {
         access_control = {}
       }
     }
-    "Test" = {
-      display_name               = "Test"
+    "${var.apps_prefix}-Test" = {
+      display_name               = "${var.apps_prefix}-Test"
       parent_management_group_id = "Apps"
       subscription_ids           = []
       archetype_config = {
@@ -43,8 +43,8 @@ locals {
         access_control = {}
       }
     }
-    "QA" = {
-      display_name               = "QA"
+    "${var.apps_prefix}-QA" = {
+      display_name               = "${var.apps_prefix}-QA"
       parent_management_group_id = "Apps"
       subscription_ids           = []
       archetype_config = {
@@ -54,8 +54,8 @@ locals {
         access_control = {}
       }
     }
-    "Training" = {
-      display_name               = "Training"
+    "${var.apps_prefix}-Training" = {
+      display_name               = "${var.apps_prefix}-Training"
       parent_management_group_id = "Apps"
       subscription_ids           = []
       archetype_config = {
@@ -65,8 +65,8 @@ locals {
         access_control = {}
       }
     }
-    "Innovation" = {
-      display_name               = "Innovation"
+    "${var.apps_prefix}-Innovation" = {
+      display_name               = "${var.apps_prefix}-Innovation"
       parent_management_group_id = "Apps"
       subscription_ids           = []
       archetype_config = {
