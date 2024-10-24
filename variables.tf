@@ -1,10 +1,5 @@
-variable "starter_locations" {
-  type        = list(string)
-  description = "The location for Azure resources. (e.g 'uksouth')|azure_location"
-}
-
 variable "location" {
-  type = string
+  type    = string
   default = "westus2"
 }
 
@@ -42,12 +37,12 @@ variable "root_parent_id" {
 }
 
 variable "deploy_management_resources" {
-  type = bool
+  type    = bool
   default = false
 }
 
 variable "log_retention_in_days" {
-  type = number
+  type    = number
   default = 50
 }
 
@@ -74,6 +69,26 @@ variable "deploy_identity_resources" {
 }
 
 variable "deploy_connectivity_resources" {
-  type = bool
+  type    = bool
+  default = false
+}
+
+variable "deploy_core_landing_zones" {
+  type    = bool
+  default = true
+}
+
+variable "deploy_corp_landing_zones" {
+  type    = bool
+  default = false
+}
+
+variable "deploy_demo_landing_zones" {
+  type    = bool
+  default = false
+}
+
+variable "deploy_sap_landing_zones" {
+  type    = bool
   default = false
 }

@@ -1,5 +1,5 @@
 locals {
-  custom_landing_zones      = {
+  custom_landing_zones = {
     "Prod" = {
       display_name               = "Prod"
       parent_management_group_id = "Apps"
