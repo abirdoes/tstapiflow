@@ -17,7 +17,7 @@ locals {
               }
             }
             vpn_gateway = {
-              enabled = false
+              enabled = true
               config = {
                 bgp_settings       = []
                 routing_preference = ""
@@ -25,7 +25,7 @@ locals {
               }
             }
             azure_firewall = {
-              enabled = false
+              enabled = true
               config = {
                 enable_dns_proxy              = false
                 dns_servers                   = []

@@ -26,6 +26,7 @@ module "alz" {
   deploy_corp_landing_zones = var.deploy_corp_landing_zones
   deploy_demo_landing_zones = var.deploy_demo_landing_zones
   deploy_sap_landing_zones  = var.deploy_sap_landing_zones
+  deploy_online_landing_zones = var.deploy_online_landing_zones
 
   custom_landing_zones = local.custom_landing_zones
 
